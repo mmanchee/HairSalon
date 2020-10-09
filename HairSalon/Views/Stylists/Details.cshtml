@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+@using HairSalon.Models
+
+<button type="button" class="btn btn-info" onclick="window.location.href='/Stylists/{@Model.StylistId}/Edit';">Edit</button>
+<button type="button" class="btn btn-info" onclick="window.location.href='/Clients/Create';">Add Client</button>
+
+<h2>@Model.StylistName's Details</h2>
+<hr />
+<table class="set-table">
+  <tr>
+    <td>@Html.DisplayNameFor(model => model.StylistName):</td>
+    <td>@Html.DisplayFor(model => model.StylistName)</td>
+  </tr>
+</table>
+
+<div class="box">
+  <div class="inner-box">
+    @if (@Model.Clients.Count == 0)
+    {
+      <p>No Clients have been added yet!</p>
+    } 
+    @foreach (Client client in Model.Clients)
+    {
+      <li>@Html.ActionLink($"{client.ClientName}", "Details", "Clients", new { id = client.ClientId})</li>
+    }
+  </div>
+</div>

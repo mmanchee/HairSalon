@@ -4,8 +4,8 @@
 
 @model HairSalon.Models.Client
 
-@* Back to model.Stylist.StylistName
-Back to model.ClientName *@
+<button type="button" class="btn btn-info" onclick="window.location.href='/Stylists/{@Model.StylistId}';">@Model.Stylist.StylistName</button>
+<button type="button" class="btn btn-info" onclick="window.location.href='/Clients/{@Model.ClientId}';">Back @Model.ClientName</button>
 
 <h4>Editing: @Html.DisplayFor(model => model.ClientName)</h4>
 
