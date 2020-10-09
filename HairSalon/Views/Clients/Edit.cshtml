@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client
+
+@* Back to model.Stylist.StylistName
+Back to model.ClientName *@
+
+<h4>Editing: @Html.DisplayFor(model => model.ClientName)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ClientId)
+    <table class="set-table">
+      <tr>
+        <td>@Html.Label("Name"):</td>
+        <td>@Html.EditorFor(model => model.ClientName, new { @required = "required"})</td>
+      </tr>
+      <tr>
+        <td>@Html.Label("Specialist"):</td>
+        <td>@Html.DropDownList("StylistId")</td>
+      </tr>
+    </table>
+    <input type="submit" value="Save" class="btn btn-info"/>
+}

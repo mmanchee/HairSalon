@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client
+
+@* Back to model.Stylist.StylistName 
+Edit model.ClientName *@
+
+<p>@Model.ClientName's Details</p>
+<hr />
+<table class="set-table">
+  <tr>
+    <td>@Html.DisplayName("Name"):</td>
+    <td>@Html.DisplayFor(model => model.ClientName)</td>
+  </tr>
+  <tr>
+    <td>@Html.DisplayName("Stylist"):</td>
+    <td>@Html.DisplayFor(model => model.Stylist.StylistName)</td>
+  </tr>
+</table>
