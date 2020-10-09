@@ -4,15 +4,28 @@
 
 @model HairSalon.Models.Client
 
-<button type="button" class="btn btn-info" onclick="window.location.href='/Stylists/{@Model.StylistId}';">@Model.Stylist.StylistName</button>
-<button type="button" class="btn btn-info" onclick="window.location.href='/Clients/{@Model.ClientId}/Edit';">Edit @Model.ClientName</button>
+@Html.ActionLink( "All Stylists", "Index", "Stylists", null, new { @class = "btn btn-info" })
+@Html.ActionLink( "Back to Stylist", "Details", "Stylists", new { id = Model.StylistId }, new { @class = "btn btn-info" })
+@Html.ActionLink( "Edit", "Edit", null, new { id = Model.ClientId }, new { @class = "btn btn-info" })
 
-<p>@Model.ClientName's Details</p>
+<p>@Html.DisplayFor(model => model.ClientName)'s Details</p>
 <hr />
 <table class="set-table">
   <tr>
     <td>@Html.DisplayName("Name"):</td>
     <td>@Html.DisplayFor(model => model.ClientName)</td>
+  </tr>
+  <tr>
+    <td>@Html.DisplayName("Likes"):</td>
+    <td>@Html.DisplayFor(model => model.Likes)</td>
+  </tr>
+  <tr>
+    <td>@Html.DisplayName("Dislikes"):</td>
+    <td>@Html.DisplayFor(model => model.Dislikes)</td>
+  </tr>
+  <tr>
+    <td>@Html.DisplayName("Phone Number"):</td>
+    <td>@Html.DisplayFor(model => model.Phone)</td>
   </tr>
   <tr>
     <td>@Html.DisplayName("Stylist"):</td>

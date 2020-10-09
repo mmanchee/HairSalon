@@ -5,15 +5,20 @@
 @model HairSalon.Models.Stylist
 @using HairSalon.Models
 
-<button type="button" class="btn btn-info" onclick="window.location.href='/Stylists/{@Model.StylistId}/Edit';">Edit</button>
-<button type="button" class="btn btn-info" onclick="window.location.href='/Clients/Create';">Add Client</button>
+@Html.ActionLink( "All Stylists", "Index", "Stylists", null, new { @class = "btn btn-info" })
+@Html.ActionLink( "Edit", "Edit", "Stylists", new { id = Model.StylistId }, new { @class = "btn btn-info" })
+@Html.ActionLink( "Add Client", "Create", "Clients", null, new { @class = "btn btn-info" })
 
-<h2>@Model.StylistName's Details</h2>
+<h2>@Html.DisplayFor(model => model.StylistName)'s Details</h2>
 <hr />
 <table class="set-table">
   <tr>
-    <td>@Html.DisplayNameFor(model => model.StylistName):</td>
+    <td>@Html.DisplayName("Name"):</td>
     <td>@Html.DisplayFor(model => model.StylistName)</td>
+  </tr>
+  <tr>
+    <td>@Html.DisplayName("Specialty"):</td>
+    <td>@Html.DisplayFor(model => model.Specialty)</td>
   </tr>
 </table>
 
@@ -22,10 +27,14 @@
     @if (@Model.Clients.Count == 0)
     {
       <p>No Clients have been added yet!</p>
-    } 
-    @foreach (Client client in Model.Clients)
-    {
-      <li>@Html.ActionLink($"{client.ClientName}", "Details", "Clients", new { id = client.ClientId})</li>
     }
+    else
+    {
+      @foreach (Client client in Model.Clients)
+      {
+        <li>@Html.ActionLink($"{client.ClientName}", "Details", "Clients", new { id = client.ClientId})</li>
+      }
+    }
+    
   </div>
 </div>

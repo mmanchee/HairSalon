@@ -4,6 +4,8 @@
 
 @model HairSalon.Models.Client
 
+@Html.ActionLink( "All Stylists", "Index", "Stylists", null, new { @class = "btn btn-info" })
+
 <h4>Add Client</h4>
 
 @using (Html.BeginForm())
@@ -14,7 +16,19 @@
       <td>@Html.TextBoxFor(model => model.ClientName, new { @required = "required"})</td>
     </tr>
     <tr>
-      <td>@Html.Label("Select Stylist"):</td>
+      <td>@Html.Label("Likes"):</td>
+      <td>@Html.TextAreaFor(model => model.Likes, new { @class="big-input"})</td>
+    </tr>
+    <tr>
+      <td>@Html.Label("Dislikes"):</td>
+      <td>@Html.TextAreaFor(model => model.Dislikes, new { @class="big-input"})</td>
+    </tr>
+    <tr>
+      <td>@Html.Label("Phone Number"):</td>
+      <td>@Html.TextBoxFor(model => model.Phone, new { @required = "required"})</td>
+    </tr>
+    <tr>
+      <td>@Html.Label("Assigned Stylist"):</td>
       <td>@Html.DropDownList("StylistId")</td>
     </tr>
   </table>

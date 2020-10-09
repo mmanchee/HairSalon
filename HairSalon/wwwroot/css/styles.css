@@ -20,6 +20,8 @@ body {
 .big-input {
   height: 20%;
   width: 100%;
+  border: 1px, rgb(243, 55, 55);
+  border-radius: 10px;
 }
 .set-table {
   border-collapse: collapse;
@@ -34,6 +36,6 @@ td {
   margin: 2% 5% 2% 5%;
 }
 .editor {
-  height: 40px;
-  width: 150px;
+  height: 20%;
+  width: 100%;
 }

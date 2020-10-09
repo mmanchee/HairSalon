@@ -26,12 +26,13 @@ namespace HairSalon.Controllers
     {
       _db.Clients.Add(client);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      System.Console.WriteLine(client.StylistId);
+      return RedirectToAction("Details", "Stylists", new { id = client.StylistId });
     }
     public ActionResult Details(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(clients => clients.ClientId == id);
-      // ViewBag.StylistName = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == thisClient.StylistId);
+      ViewBag.StylistName = _db.Stylists.FirstOrDefault(stylists => stylists.StylistId == thisClient.StylistId);
       return View(thisClient);
     }
     public ActionResult Edit(int id)
@@ -45,7 +46,7 @@ namespace HairSalon.Controllers
     {
       _db.Entry(client).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = client.StylistId });
     }
   }
 }

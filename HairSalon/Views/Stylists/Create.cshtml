@@ -4,14 +4,20 @@
 
 @model HairSalon.Models.Stylist
 
+@Html.ActionLink( "All Stylists", "Index", "Stylists", null, new { @class = "btn btn-info" })
+
 <h4>Add Stylist</h4>
 
 @using (Html.BeginForm())
 {
   <table class="set-table">
     <tr>
-      <td>@Html.LabelFor(model => model.StylistName)</td>
+      <td>@Html.Label("Name"):</td>
       <td>@Html.TextBoxFor(model => model.StylistName, new { @required = "required"})</td>
+    </tr>
+    <tr>
+      <td>@Html.Label("Specialty"):</td>
+      <td>@Html.TextAreaFor(model => model.Specialty, new { @class="big-input"})</td>
     </tr>
   </table>
   <input type="submit" value="Add Stylist" class="btn btn-info" />
