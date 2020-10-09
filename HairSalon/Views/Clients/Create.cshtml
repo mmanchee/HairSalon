@@ -13,19 +13,19 @@
   <table class="set-table">
     <tr>
       <td>@Html.Label("Name"):</td>
-      <td>@Html.TextBoxFor(model => model.ClientName, new { @required = "required"})</td>
+      <td>@Html.TextBoxFor(model => model.ClientName, new { htmlAttributes = new { @class = "form-control", required = "required" } })</td>
     </tr>
     <tr>
       <td>@Html.Label("Likes"):</td>
-      <td>@Html.TextAreaFor(model => model.Likes, new { @class="big-input"})</td>
+      <td>@Html.TextAreaFor(model => model.Likes, new { htmlAttributes = new { @rows = "5", @class = "big-input form-control" } })</td>
     </tr>
     <tr>
       <td>@Html.Label("Dislikes"):</td>
-      <td>@Html.TextAreaFor(model => model.Dislikes, new { @class="big-input"})</td>
+      <td>@Html.TextAreaFor(model => model.Dislikes, new { htmlAttributes = new { @rows = "5", @class = "big-input form-control" } })</td>
     </tr>
     <tr>
       <td>@Html.Label("Phone Number"):</td>
-      <td>@Html.TextBoxFor(model => model.Phone, new { @required = "required"})</td>
+      <td>@Html.TextBoxFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", required = "required" } })</td>
     </tr>
     <tr>
       <td>@Html.Label("Assigned Stylist"):</td>

@@ -13,11 +13,11 @@
   <table class="set-table">
     <tr>
       <td>@Html.Label("Name"):</td>
-      <td>@Html.TextBoxFor(model => model.StylistName, new { @required = "required"})</td>
+      <td>@Html.TextBoxFor(model => model.StylistName, new { htmlAttributes = new { @class = "form-control", required = "required" } })</td>
     </tr>
     <tr>
       <td>@Html.Label("Specialty"):</td>
-      <td>@Html.TextAreaFor(model => model.Specialty, new { @class="big-input"})</td>
+      <td>@Html.TextAreaFor(model => model.Specialty, new { htmlAttributes = new { @rows = "5", @class = "big-input form-control" } })</td>
     </tr>
   </table>
   <input type="submit" value="Add Stylist" class="btn btn-info" />
