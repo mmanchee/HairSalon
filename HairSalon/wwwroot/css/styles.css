@@ -81,3 +81,8 @@ td {
   margin-top: 1%;
   margin-bottom: 5%;
 }
+
+#searchbar {
+  float: right;
+  margin-top: 100px;
+}
