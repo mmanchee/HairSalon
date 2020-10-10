@@ -8,8 +8,8 @@
 @Html.ActionLink( "Back to Stylist", "Details", "Stylists", new { id = Model.StylistId }, new { @class = "btn btn-info" })
 @Html.ActionLink( "Edit", "Details", null, new { id = Model.ClientId }, new { @class = "btn btn-info" })
 
-<h4>Editing: @Html.DisplayFor(model => model.ClientName)</h4>
-
+<p class="title">Editing: @Html.DisplayFor(model => model.ClientName)</p>
+<hr />
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ClientId)
@@ -37,3 +37,4 @@
     </table>
     <input type="submit" value="Save" class="btn btn-info"/>
 }
+<hr />

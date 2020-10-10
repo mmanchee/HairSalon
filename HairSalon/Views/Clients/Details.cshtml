@@ -8,7 +8,7 @@
 @Html.ActionLink( "Back to Stylist", "Details", "Stylists", new { id = Model.StylistId }, new { @class = "btn btn-info" })
 @Html.ActionLink( "Edit", "Edit", null, new { id = Model.ClientId }, new { @class = "btn btn-info" })
 
-<p>@Html.DisplayFor(model => model.ClientName)'s Details</p>
+<p class="title">@Html.DisplayFor(model => model.ClientName)'s Details</p>
 <hr />
 <table class="set-table">
   <tr>
@@ -32,3 +32,4 @@
     <td>@Html.DisplayFor(model => model.Stylist.StylistName)</td>
   </tr>
 </table>
+<hr />

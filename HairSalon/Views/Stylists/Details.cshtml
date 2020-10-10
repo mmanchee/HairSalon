@@ -9,7 +9,7 @@
 @Html.ActionLink( "Edit", "Edit", "Stylists", new { id = Model.StylistId }, new { @class = "btn btn-info" })
 @Html.ActionLink( "Add Client", "Create", "Clients", null, new { @class = "btn btn-info" })
 
-<h2>@Html.DisplayFor(model => model.StylistName)'s Details</h2>
+<p class="title">@Html.DisplayFor(model => model.StylistName)'s Details</p>
 <hr />
 <table class="set-table">
   <tr>
@@ -21,6 +21,7 @@
     <td>@Html.DisplayFor(model => model.Specialty)</td>
   </tr>
 </table>
+<hr />
 
 <div class="box">
   <div class="inner-box">
@@ -38,3 +39,4 @@
     
   </div>
 </div>
+<hr />

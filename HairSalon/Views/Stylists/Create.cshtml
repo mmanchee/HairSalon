@@ -6,19 +6,20 @@
 
 @Html.ActionLink( "All Stylists", "Index", "Stylists", null, new { @class = "btn btn-info" })
 
-<h4>Add Stylist</h4>
-
+<p class="title">Add Stylist</p>
+<hr />
 @using (Html.BeginForm())
 {
   <table class="set-table">
     <tr>
       <td>@Html.Label("Name"):</td>
-      <td>@Html.TextBoxFor(model => model.StylistName, new { htmlAttributes = new { @class = "form-control", required = "required" } })</td>
+      <td>@Html.TextBoxFor(model => model.StylistName, new { @class = "form-control", required = "required" })</td>
     </tr>
     <tr>
       <td>@Html.Label("Specialty"):</td>
-      <td>@Html.TextAreaFor(model => model.Specialty, new { htmlAttributes = new { @rows = "5", @class = "big-input form-control" } })</td>
+      <td>@Html.TextAreaFor(model => model.Specialty, new { @rows = "5", @class = "big-input form-control" } )</td>
     </tr>
   </table>
   <input type="submit" value="Add Stylist" class="btn btn-info" />
 }
+<hr />

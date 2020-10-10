@@ -6,31 +6,32 @@
 
 @Html.ActionLink( "All Stylists", "Index", "Stylists", null, new { @class = "btn btn-info" })
 
-<h4>Add Client</h4>
-
+<p class="title">Add Client</p>
+<hr />
 @using (Html.BeginForm())
 {
   <table class="set-table">
     <tr>
       <td>@Html.Label("Name"):</td>
-      <td>@Html.TextBoxFor(model => model.ClientName, new { htmlAttributes = new { @class = "form-control", required = "required" } })</td>
+      <td>@Html.TextBoxFor(model => model.ClientName, new { @class = "form-control", required = "required" } )</td>
     </tr>
     <tr>
       <td>@Html.Label("Likes"):</td>
-      <td>@Html.TextAreaFor(model => model.Likes, new { htmlAttributes = new { @rows = "5", @class = "big-input form-control" } })</td>
+      <td>@Html.TextAreaFor(model => model.Likes, new { @rows = "5", @class = "big-input form-control" } )</td>
     </tr>
     <tr>
       <td>@Html.Label("Dislikes"):</td>
-      <td>@Html.TextAreaFor(model => model.Dislikes, new { htmlAttributes = new { @rows = "5", @class = "big-input form-control" } })</td>
+      <td>@Html.TextAreaFor(model => model.Dislikes, new { @rows = "5", @class = "big-input form-control" } )</td>
     </tr>
     <tr>
       <td>@Html.Label("Phone Number"):</td>
-      <td>@Html.TextBoxFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control", required = "required" } })</td>
+      <td>@Html.TextBoxFor(model => model.Phone, new { @class = "form-control", required = "required" } )</td>
     </tr>
     <tr>
       <td>@Html.Label("Assigned Stylist"):</td>
-      <td>@Html.DropDownList("StylistId")</td>
+      <td>@Html.DropDownList("StylistId", null, new { @class="form-control"})</td>
     </tr>
   </table>
-  <input type="submit" value="Add new client" class="btn btn-default" />
+  <input type="submit" value="Add new client" class="btn btn-info" />
 }
+<hr />
