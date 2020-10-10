@@ -66,7 +66,23 @@ styling to page
 * Setup with SQL statements 
   * Enter the following code into your SQL database and run.
   ``` SQL
-  
+  CREATE DATABASE `mike_manchee` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+  USE 'mike_manchee';
+  CREATE TABLE `clients` (
+    `ClientId` int NOT NULL AUTO_INCREMENT,
+    `ClientName` varchar(255) DEFAULT NULL,
+    `StylistId` int DEFAULT '0',
+    `Likes` varchar(255) DEFAULT NULL,
+    `Dislikes` varchar(255) DEFAULT NULL,
+    `Phone` varchar(45) DEFAULT NULL,
+    PRIMARY KEY (`ClientId`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CREATE TABLE `stylists` (
+    `StylistId` int NOT NULL AUTO_INCREMENT,
+    `StylistName` varchar(255) DEFAULT NULL,
+    `Specialty` varchar(255) DEFAULT NULL,
+    PRIMARY KEY (`StylistId`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
   ```
   * Go to appsettings.json and change the password if needed.
 
